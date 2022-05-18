@@ -13,11 +13,11 @@ $placeId=0;
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="w3-panel w3-green">
     <h3>Success!</h3>
-    <p>Your record has been deleted successfully.</p>
+    <p> Place has been Deleted Successfully.</p>
   </div>';  
 
 } else {
-  echo "Error updating record: " . mysqli_error($connection);
+  echo "Error Deleting Place: " . mysqli_error($connection);
 }
            }
 ?>
