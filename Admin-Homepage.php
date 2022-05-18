@@ -50,64 +50,49 @@ include("db-connect.php");
             <a href="Admin-Page.php"> <h1> View More Entertainment Places </h1> </a>
             <!-- <p> </p> -->
 
-            <div class="row">
+             <div class="row">
+               <?php 
+  $query="select * FROM place where featured!=1  LIMIT 3";
+   $result = mysqli_query($connection, $query);
+ if ( $result ){
+     while ($row = mysqli_fetch_array($result) ) {
+                            ?>
                 <div class="places-col p1">
-                    <img src="imagesruh/Bobs.jpeg">
+                    <img src="<?php echo $row['photo'] ?>">
                     <div class="layer">
-                        <h3> BOB'S </h3>
+                        <h3><?php echo $row['place_name'] ?> </h3>
                     </div>
                 </div>
-
-                <div class="places-col p2">
-                    <img src="imagesruh/crystal.jpeg">
-                    <div class="layer">
-                        <h3> Crystal Maze </h3>
-                    </div>
-                </div>
-
-                <div class="places-col p3">
-                    <img src="imagesruh/mueseum-.webp">
-                    <div class="layer">
-                        <h3> Museum Of Illusions </h3>
-                    </div>
-                </div>
-
+                <?php }}?>
             </div>
         </section>
 
 
         <section class="places">
-            <a href="Admin-Page.php"> <h1> Featured Now </h1> </a>
+            <a href="Admin-Page.php?sort=featured"> <h1> Featured Now </h1> </a>
             <p> Time is running, Don't miss out on the fun! </p> 
 
-            <div class="row">
+                   <div class="row">
+                         <?php 
+    $query="select * FROM place where featured=1  LIMIT 3";
+   $result = mysqli_query($connection, $query);
+ if ( $result ){
+     while ($row = mysqli_fetch_array($result) ) {
+                            ?>
                 <div class="places-col last-chance">
-                    <img src="imagesruh/Escapero.jpeg">
+                    <img src="<?php echo $row['photo'] ?>">
                     <div class="layer">
-                        <h3> Escape The Room </h3>
+                        <h3> <?php echo $row['place_name'] ?> </h3>
                     </div>
                 </div>
 
-                <div class="places-col last-chance">
-                    <img src="imagesruh/firstaiment-.jpeg">
-                    <div class="layer">
-                        <h3> Firstainment</h3>
-                    </div>
-                </div>
-
-                <div class="places-col last-chance">
-                    <img src="imagesruh/padelRush.jpeg">
-                    <div class="layer">
-                        <h3> Padel Rush </h3>
-                    </div>
-                </div>
-
+                 <?php }}?>
             </div>
         </section>
 
         
         <section class="reviews">
-            <a href="reviewss-Admin.php"><h1>Reviews</h1> </a>
+            <a href=""><h1>Reviews</h1> </a>
             
 
             <div class="row">
