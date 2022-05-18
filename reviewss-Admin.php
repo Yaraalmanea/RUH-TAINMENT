@@ -39,9 +39,9 @@ include("db-connect.php");
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 140px;
+  font-size: 22px;
+  padding: 18px;
+  width: 120px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -122,8 +122,14 @@ class="frame"
 ></iframe>
 
 
+   <div>
+        <h2 style="text-align:center; font-size:36px; font-weight: 600; color: rgba(66, 70, 62, 0.66); margin-bottom:0px;  margin-top:40px;;"> Reviews On <?php echo $placeName ?> </h2>
+        <hr style="width:44%; text-align:center; margin-left:28%; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ; margin-bottom:-80px;">  
+   </div>
+
+
         <section class="reviews">
-            <a href="reviewssdetailAdmin.php?id=<?php echo $placeId?>" ><h1>Reviews <?php echo $placeName ?></h1> </a>
+         
             <br> 
              <?php 
       $query="select * FROM reviews WHERE place_id='$placeId' ORDER BY date DESC LIMIT 3";
@@ -171,6 +177,12 @@ class="frame"
 
 
         </section>
+
+        <div class="reviews">
+        <a href="reviewssDetailAdmin.php?id=<?php echo $placeId?>" ><h1 style="margin-top:-120px;" > Click To View All Reviews </h1> </a>
+        </div>
+
+
  <!-- MENU TOGGLE -->
        
 
