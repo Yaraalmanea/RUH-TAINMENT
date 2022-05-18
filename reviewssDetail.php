@@ -82,7 +82,7 @@ class="frame"
       
         <div>
          <h2 style="text-align:center; font-size:36px; font-weight: 600; color: rgba(66, 70, 62, 0.66); margin-bottom:0px;  margin-top:0;"> All Reviews On <?php echo $placeName ?> </h2>
-        <hr style="width:60%; text-align:center; margin-left:20%; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ; margin-bottom:10px;">  
+        <hr style="width:67%; text-align:center; margin-left:17%; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ; margin-bottom:10px;">  
        </div>
        
 <br> 
@@ -138,14 +138,14 @@ class="frame"
             <div id="postReview">
                 <form id="write" method="POST" action="Insert-Reviews.php">
                        <input type="hidden" name="placeId" id="placeId" value="<?php echo $placeId ?>" />
-                       <input type="hidden" name="star" id="star" value="4" />
+                       <input type="hidden" class="starHidden" name="star" id="star" value="1" />
                     <h2 ><i class="fa fa-pencil"></i> Review & Rate </h2>
-                    <div class="revImg"><img src="Images/user1.png" width="8%"  style="float: left; display: block;  overflow: hidden; 
-                        ">  
-                    
+                    <div class="revImg"><img src="Images/user1.png" width="8%"  style="float: left; display: block;  overflow: hidden; ">  
+                  
+                 
                     <div class="rates">
-                        <span id="countStar" style="color:black;">0</span><p> out of 5 stars </p>
-                       <div id="star1" class="star1 fa fa-star"></div>
+                        <span id="countStar" style="color:black;">1</span><p> out of 5 stars </p>
+                       <div id="star1" class="star1 fa fa-star checked"></div>
                        <div id="star2" class="fa fa-star"></div>
                        <div id="star3" class="fa fa-star"></div>
                        <div id="star4" class="fa fa-star"></div>
@@ -153,21 +153,23 @@ class="frame"
                      
                      </div> <br>
 
+                   
                        <label for="name" style="text-align:left; display:block; margin-left:15px;  margin-bottom:-15px; font-size: 21px; color:#073763 ; font-weight:bold;"> Name : </label>  
                        <br>
-                       <input type="tex"  id="username" name="username" placeholder=" Enter your name" style="float:left; margin-left:15px;">
+                       <input required type="tex"  id="username" name="username" placeholder=" Enter your name" style="float:left; margin-left:15px;">
                        <br> <br>
                       
                         <label for="name" style="text-align:left; display:block; margin-left:15px; margin-bottom:-15px; font-size: 21px; color:#073763 ; font-weight:bold;"> Review :  </label> <br>
-                        <textarea id="comments" name="comments" rows="5" cols="70" placeholder="Enter your Review" style="float:left; margin-left:15px;"> </textarea>
+                        <textarea required id="comments" name="comments" rows="5" cols="70" placeholder="Enter your Review" style="float:left; margin-left:15px;"> </textarea>
                        
                         <br><br><br><br><br>
 
-                       <button  class="button" id="btnPost"  style="float:center; margin-left:-431px;"> POST </button>
-                       <button   class="button"  style="float:center; margin-left:15px;"> CANCEL </button>
-                     
+                       <button  class="button" id="btnPost"  style="float:center; margin-left:-431px;" value="post"> POST </button>
+                      <!-- <button   class="button"  style="float:center; margin-left:15px;" value="cancel"> CANCEL </button>
+                     -->
                     </form>
-                    <br><br>
+                    <br>
+                    <br>
             </div>
         </section>
  <!-- MENU TOGGLE -->
@@ -178,8 +180,8 @@ class="frame"
 
      var navLinks = document.getElementById("navLinks");
 
-     function search() {
-                 url = 'Admin-Page.php?sort='+document.getElementById("srch").value;
+    function search() {
+                 url = 'viewPlaces.php?sort='+document.getElementById("srch").value;
                  window.open(url);
             }
 
@@ -192,6 +194,59 @@ class="frame"
         
      }
  </script>
+
+<script>
+
+ $(document).on('click', '#star1', function() { 
+ $("#star1").addClass("checked");
+ $("#star2").removeClass("checked");
+ $("#star3").removeClass("checked");
+ $("#star4").removeClass("checked");
+ $("#star5").removeClass("checked");
+ $("#countStar").text('1');
+ $("input[name=star]").val("1");
+ });
+
+  $(document).on('click', '#star2', function() { 
+ $("#star1").addClass("checked");
+ $("#star2").addClass("checked");
+ $("#star3").removeClass("checked");
+ $("#star4").removeClass("checked");
+ $("#star5").removeClass("checked");
+ $("#countStar").text('2');
+ $("input[name=star]").val("2");
+ });
+  $(document).on('click', '#star3', function() { 
+ $("#star1").addClass("checked");
+ $("#star2").addClass("checked");
+ $("#star3").addClass("checked");
+ $("#star4").removeClass("checked");
+ $("#star5").removeClass("checked");
+ $("#countStar").text('3');
+ $("input[name=star]").val("3");
+ });
+
+   $(document).on('click', '#star4', function() { 
+ $("#star1").addClass("checked");
+ $("#star2").addClass("checked");
+ $("#star3").addClass("checked");
+ $("#star4").addClass("checked");
+ $("#star5").removeClass("checked");
+ $("#countStar").text('4');
+ $("input[name=star]").val("4");
+ });
+  $(document).on('click', '#star5', function() { 
+ $("#star1").addClass("checked");
+ $("#star2").addClass("checked");
+ $("#star3").addClass("checked");
+ $("#star4").addClass("checked");
+ $("#star5").addClass("checked");
+ $("#countStar").text('5');
+ $("input[name=star]").val("5");
+ });
+</script>
+
+
 
 <script>
  $(document).ready(function(){
