@@ -121,12 +121,78 @@ include("db-connect.php");
       </a>
       <div class="card-body">
         <div class="card-text rating">
+        <?php 
+        $placeId1= $row['place_id'];
+        //count..
+         $sql="SELECT COUNT(*) AS `count` FROM reviews where place_id='".$placeId1."'";
+         $result1=mysqli_query($connection,$sql);
+         $row1 = mysqli_fetch_assoc($result1);
+         $count = $row1['count'];
+        
+         //sum star
+         $sq2="SELECT sum(star) AS `sum` FROM reviews where place_id='".$placeId1."'";
+         $result2=mysqli_query($connection,$sq2);
+         $row2 = mysqli_fetch_assoc($result2);
+         $sum = $row2['sum'];
+         $starValue=0;
+         if($count>0){
+           $starValue= $sum/$count;
+         }
+        ?>
+        <?php if($starValue==0){
+        ?>
+            <i id="start1" class="fa fa-star"></i>
+            <i id="start2" class="fa fa-star"></i>
+            <i id="start3" class="fa fa-star"></i>
+            <i id="start4" class="fa fa-star"></i>
+            <i id="start5" class="fa fa-star"></i>
+        <?php }?>
+
+          <?php if($starValue<1 &&  $starValue>0){
+        ?>
+            <i id="start1" class="fa fa-star checked"></i>
+            <i id="start2" class="fa fa-star"></i>
+            <i id="start3" class="fa fa-star"></i>
+            <i id="start4" class="fa fa-star"></i>
+            <i id="start5" class="fa fa-star"></i>
+        <?php }?>
+
+          <?php if($starValue<2 &&  $starValue>1){
+        ?>
+            <i id="start1" class="fa fa-star checked"></i>
+            <i id="start2" class="fa fa-star checked"></i>
+            <i id="start3" class="fa fa-star"></i>
+            <i id="start4" class="fa fa-star"></i>
+            <i id="start5" class="fa fa-star"></i>
+        <?php }?>
+         <?php if($starValue<3 &&  $starValue>2){
+        ?>
+            <i id="start1" class="fa fa-star checked"></i>
+            <i id="start2" class="fa fa-star checked"></i>
+            <i id="start3" class="fa fa-star checked"></i>
+            <i id="start4" class="fa fa-star"></i>
+            <i id="start5" class="fa fa-star"></i>
+        <?php }?>
+        <?php if($starValue<4 &&  $starValue>3){
+        ?>
+            <i id="start1" class="fa fa-star checked"></i>
+            <i id="start2" class="fa fa-star checked"></i>
+            <i id="start3" class="fa fa-star checked"></i>
+            <i id="start4" class="fa fa-star checked"></i>
+            <i id="start5" class="fa fa-star"></i>
+        <?php }?>
+         <?php if($starValue>4){
+        ?>
             <i id="start1" class="fa fa-star checked"></i>
             <i id="start2" class="fa fa-star checked"></i>
             <i id="start3" class="fa fa-star checked"></i>
             <i id="start4" class="fa fa-star checked"></i>
             <i id="start5" class="fa fa-star checked"></i>
-          </div>
+        <?php }?>
+            
+        <?php  echo "(". $count .")";?>
+        </div>
+
     <div class="card-text">
         <p> <?php echo $row['Description'] ?></p>
         <h6><i class="material-icons"> family_restroom </i> <?php echo $row['age_category'] ?> </h6>
@@ -164,7 +230,7 @@ include("db-connect.php");
      var navLinks = document.getElementById("navLinks");
 
      function search() {
-                 url = 'Admin-Page.php?sort='+document.getElementById("srch").value;
+                 url = 'viewPlaces.php?sort='+document.getElementById("srch").value;
                  window.open(url);
             }
 
