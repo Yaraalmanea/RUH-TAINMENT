@@ -82,7 +82,7 @@ include("db-connect.php");
       
         
 
-<br> <br> <br><br>
+<br><br><br><br>
 <img src="<?php echo $photo ?>" alt=""  class="winImg">
 <br>
 <iframe src="<?php echo $location ?>"

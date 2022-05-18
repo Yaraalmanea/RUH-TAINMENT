@@ -148,7 +148,7 @@ include("db-connect.php");
             <i id="start5" class="fa fa-star"></i>
         <?php }?>
 
-          <?php if($starValue<1 &&  $starValue>0){
+          <?php if($starValue<=1 &&  $starValue>0){
         ?>
             <i id="start1" class="fa fa-star checked"></i>
             <i id="start2" class="fa fa-star"></i>
@@ -157,7 +157,7 @@ include("db-connect.php");
             <i id="start5" class="fa fa-star"></i>
         <?php }?>
 
-          <?php if($starValue<2 &&  $starValue>1){
+          <?php if($starValue<=2 &&  $starValue>1){
         ?>
             <i id="start1" class="fa fa-star checked"></i>
             <i id="start2" class="fa fa-star checked"></i>
@@ -165,7 +165,7 @@ include("db-connect.php");
             <i id="start4" class="fa fa-star"></i>
             <i id="start5" class="fa fa-star"></i>
         <?php }?>
-         <?php if($starValue<3 &&  $starValue>2){
+         <?php if($starValue<=3 &&  $starValue>2){
         ?>
             <i id="start1" class="fa fa-star checked"></i>
             <i id="start2" class="fa fa-star checked"></i>
@@ -173,7 +173,7 @@ include("db-connect.php");
             <i id="start4" class="fa fa-star"></i>
             <i id="start5" class="fa fa-star"></i>
         <?php }?>
-        <?php if($starValue<4 &&  $starValue>3){
+        <?php if($starValue<=4 &&  $starValue>3){
         ?>
             <i id="start1" class="fa fa-star checked"></i>
             <i id="start2" class="fa fa-star checked"></i>
