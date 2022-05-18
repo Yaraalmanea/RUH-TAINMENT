@@ -25,19 +25,19 @@
         $feature=0;
         }
 
-    $updateStr ="update place set place_name='$placeName',age_category='$AgeCategory', photo='$attachment1',location='$location',Description='$description' ,Featured='$feature' WHERE place_id=$id";
-
-    if (mysqli_query($connection, $updateStr)) {
+    $updateStr ="update Place set place_name='$placeName',age_category='$AgeCategory', photo='$attachment1',location='$location',Description='$description' ,Featured='$feature' WHERE place_id=$id";
+    $result= mysqli_query($connection, $updateStr) or die(mysqli_error($connection));
+    if ($result) {
     header('Refresh:2; url=Admin-Page.php');
     echo ' 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="w3-panel w3-green">
     <h3>Success!</h3>
-    <p>Your Changes have been updated successfully.</p>
+    <p>Place has been Updated Successfully.</p>
   </div>';  
 
 } else {
-  echo "Error updating record: " . mysqli_error($connection);
+  echo "Error updating Place: " . mysqli_error($connection);
 }
-    }
+           }
 ?>
