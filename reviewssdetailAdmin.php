@@ -32,6 +32,46 @@ include("db-connect.php");
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
       <title> RUH-tainment </title>
+      <style>
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 22px;
+  padding: 18px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
     </head>
 
     <body>
@@ -66,9 +106,9 @@ include("db-connect.php");
         <div class="winH1">
         <h1>  <?php echo $placeName ?></h1> </div>
       <div class="btn-eg">
-          <button  type="button" class="btn-ed" onclick= "window.location.href='Delete-Place.php?id=<?php echo $placeId ?>';" >Delete</button>
-          <button  type="button" class="btn-ed" onclick= "window.location.href='Edit-Place.php?id=<?php echo $placeId ?>';" >Edit</button>
-      </div>
+          <button  type="button" class="btn-ed button" onclick= "window.location.href='Delete-Place.php?id=<?php echo $placeId ?>';" > <span>Delete </span></button>
+          <button style="background-color: green;" type="button" class="btn-ed button" onclick= "window.location.href='Edit-Place.php?id=<?php echo $placeId ?>';" ><span>Edit </span></button>
+          </div>
         <hr style="width:35%; text-align:center; margin-left:32.5%; height:10px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ;">
         
 <br> 
@@ -82,9 +122,17 @@ class="frame"
 ></iframe>
 
 
+
+
         <section class="reviews">
-            <a href="review.html" ><h1>Reviews <?php echo $placeName ?></h1> </a>
-            <br> 
+
+        <div>
+         <h2 style="text-align:center; font-size:36px; font-weight: 600; color: rgba(66, 70, 62, 0.66); margin-bottom:8px;  margin-top:0;"> All Reviews On <?php echo $placeName ?> </h2>
+        <hr style="width:67%; text-align:center; margin-left:17%; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ; margin-bottom:10px;">  
+       </div>
+       
+
+        <br> 
              <?php 
       $query="select * FROM reviews WHERE place_id='$placeId'";
        $result = mysqli_query($connection, $query);
@@ -141,7 +189,7 @@ class="frame"
 
      var navLinks = document.getElementById("navLinks");
 
-     function search() {
+      function search() {
                  url = 'Admin-Page.php?sort='+document.getElementById("srch").value;
                  window.open(url);
             }
