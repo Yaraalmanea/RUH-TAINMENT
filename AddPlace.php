@@ -11,15 +11,10 @@
       <link href='https://css.gg/log-off.css' rel='stylesheet'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>RUH-tainment </title>
-
- 
-
   <!-- Fonts from google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places"></script>
   <script src="Location.js" defer> </script>
 </head>
 
@@ -41,7 +36,7 @@
 </section>
 
   <div class="add-new-Place-form"  style="padding-bottom: 2px;">
-    <h1 style="text-align:left;margin-left: 27%; margin-top:2%; color:#f6faf3;font-size: 40px;">Add Place</h1>
+    <h1 style="text-align:center;  margin-top:2%; color:#f6faf3;font-size: 40px;">Add Place</h1>
 
     <form action="Insert-Place.php" enctype="multipart/form-data" method="POST">
     
@@ -57,7 +52,6 @@
           <textarea name="description" class="descriptionBox" style="color:black" type="text" id="description" 
             placeholder="Description" required></textarea>
         </div>
-        <br>
         <div class="Pname">
           <label for="Pname">Mark As Featured :  </label> 
           <input type="checkbox" name ="feature" id="feature" value="true">
@@ -71,10 +65,8 @@
             <option value="Adult" style="color:black">Adult</option>
           </select>
         </div>
-
-        <br>
         <div class="Addphoto">
-          <label for="Addphoto">Add Photo :</label><br><br>
+         <br> <label for="Addphoto">Add Photo :</label><br>
           <input type="file" name="fileUpload1" id="fileUpload1" placeholder="photo 1"  required>
         </div>
 
@@ -98,7 +90,6 @@
           
           
           // parameter when you first load the API. For example:
-           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places">
           function initMap()
           {
             const map = new google.maps.Map( document.getElementById( "map" ), {
@@ -217,8 +208,9 @@
           }
         </script>
         <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLTviqWwNO7oo4kux3L88Egt8BMYbwMtw&callback=initMap&libraries=places"
           async></script>
+       
 
         <br>
         <button id="btn-place" style=" margin-left:350px; font-size:18px;" type="submit"
@@ -227,7 +219,7 @@
 
     </form>
   </div>
-  <footer class="stickyfooter"> Copyright 2022 - RUH-tainment ALL Rights Reserved </footer>
+  <footer class="stickyfooter" style="margin-top: 100px;">  Copyright 2022 - RUH-tainment ALL Rights Reserved </footer>
   <script>
 
     var navLinks = document.getElementById( "navLinks" );
