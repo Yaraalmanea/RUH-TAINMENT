@@ -25,7 +25,7 @@ include 'db-connect.php' ?>
     }
    
 
-   $insertStr ="INSERT INTO `place` (`age_category`, `Description`, `location`, `photo`, `place_name`,`featured`)
+   $insertStr ="INSERT INTO `Place` (`age_category`, `Description`, `location`, `photo`, `place_name`,`featured`)
    VALUES ('".$AgeCategory."', '".$description."', '".$location."', '".$attachment1."', '".$placeName."','".$feature."')";
    $response= mysqli_query($connection ,$insertStr) or die(mysqli_error($connection));
   // $request_id= mysqli_insert_id($connection);
@@ -35,11 +35,11 @@ include 'db-connect.php' ?>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div class="w3-panel w3-green">
     <h3>Success!</h3>
-    <p>Your record has been added  successfully.</p>
+    <p> Place has been Added Successfully.</p>
   </div>';  
 
 } else {
-  echo "Error updating record: " . mysqli_error($connection);
+  echo "Error Adding Place: " . mysqli_error($connection);
 }
 
 
