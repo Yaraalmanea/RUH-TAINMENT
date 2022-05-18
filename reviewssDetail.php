@@ -62,15 +62,15 @@ include("db-connect.php");
         <div class="winH1">
         <h1>  <?php echo $placeName ?> </h1>   </div>
         
-        <div id="wrDiv" style="float:right;   margin-right:300px; margin-top:-35px; padding:8px; width:120px; background-color: #073763c0; ">
-                <a href="#write" id="wr" style="font-size:14px;"><i class="fa fa-pencil"></i> POST A REVIEW</a> 
+       
+        <div id="wrDiv"  style="float:right; margin-right:110px; margin-top:8px; margin-bottom:10px; padding:8px; width:130px; background-color: #0ea812; ">
+                <a href="#write" class="button1" id="wr"  style="font-size:14px;"><i class="fa fa-pencil"></i> POST A REVIEW</a> 
        </div> 
 
-       <hr style="width:30%; text-align:center; margin-left:35%; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ;">
+       <hr style="width:45%; text-align:center; margin-left:26%; margin-top:3px; height:6px; color:rgb(255, 255, 255); background-color:rgba(149, 214, 100, 0.66) ; margin-bottom:-40px;">
 
           
-<br> 
-<br> 
+<br><br><br><br>
 <img src="<?php echo $photo ?>" alt=""  class="winImg">
 <br>
 <iframe src="<?php echo $location ?>"
