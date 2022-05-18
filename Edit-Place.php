@@ -72,7 +72,7 @@ if($placeId>0){
 </section>
 
   <div class="add-new-Place-form">
-    <h1  style="text-align:center; margin-top:5%; color:#f6faf3;font-size: 30px;">- Update Place -</h1>
+    <h1  style="text-align:center; margin-top:5%; color:#f6faf3;font-size: 30px;"> Update Place </h1>
 
     <form action="Update-Place.php" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="id" id="id" value="<?php echo $placeId ?>" />
@@ -92,9 +92,8 @@ if($placeId>0){
           <textarea class="descriptionBox" style="color:black" type="text" id="description" 
             placeholder="Description" required name="description"><?php echo $description ?></textarea>
         </div>
-        <br>
           <div class="Pname">
-          <label for="Pname">Mark Featured :</label><br>
+          <label for="Pname">Mark As Featured :</label>
           <?php 
           if($feature=="0")
           {?>
@@ -106,22 +105,19 @@ if($placeId>0){
           <input type="checkbox" name ="feature" id="feature" vale="true" checked>
            <?php } ?>
         </div>
-        <br>
-        <br>
         <div class="select">
-          <label for="AgeCategory">Age category :</label>
+         <br> <label for="AgeCategory">Age category :</label>
           <select id="AgeCategory" name="AgeCategory" style="color:black">
             <option value="Family" style="color:black">Family</option>
             <option value="Children" style="color:black">Children</option>
             <option value="Adult" style="color:black">Adult</option>
           </select>
         </div>
-
         <br>
         <div class="Addphoto">
-          <label for="Addphoto">Add Photo :</label><br><br>
-           <div class="" style="color:darkslateblue; ">Attachment #1 : <a href="<?php echo $attatchment1 ; ?>"> Click to Download </a></div>
-          <input type="file" id="fileUpload1" name="fileUpload1" placeholder="photo 1" required>
+          <label for="Addphoto">Add Photo :</label><br>
+           <div><a href="<?php echo $attatchment1 ; ?>" style="color:lightblue; " > Click to Download  </a></div>
+          <input type="file" id="fileUpload1" name="fileUpload1" placeholder="photo 1">
         </div>
 
         <br>
@@ -139,7 +135,40 @@ if($placeId>0){
           </div>
         </div>
         <br>
-        <script>
+
+
+        <br>
+        <button class="btn"  type="submit" style=" margin-left:350px; margin-top:50px; font-size:18px;min-width: 135px;">Save changes</button>
+
+          
+
+      </div>
+    </form>
+  </div>
+
+  <footer class="stickyfooter" style="margin-top: 100px;"> Copyright 2022 - RUH-tainment ALL Rights Reserved </footer>
+  <script>
+
+    var navLinks = document.getElementById( "navLinks" );
+
+    function search() {
+                 url = 'Admin-Page.php?sort='+document.getElementById("srch").value;
+                 window.open(url);
+            }
+
+    function hideBurger()
+    {
+      navLinks.style.right = "-300px";
+      // document.getElementById( "gg-menu" ).style.display = "block";
+    }
+    function showBurger()
+    {
+      navLinks.style.right = "0";
+      // document.getElementById( "gg-menu" ).style.display = "none";
+
+    }
+  </script>
+          <script>
           // parameter when you first load the API. For example:
           // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places">
           function initMap()
@@ -258,45 +287,7 @@ if($placeId>0){
               input.value = "";
             } );
           }
-        </script>
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places"
-          async></script>
-
-          </div>
-
-        <br>
-        <button class="btn" onclick="document.location='reviewss-Admin.html'" type="submit" style=" margin-left:350px; margin-top:30px; font-size:18px;min-width: 135px;">Save changes</button>
-
-          
-
-      </div>
-    </form>
-  </div>
-
-  <footer class="stickyfooter"> Copyright 2022 - RUH-tainment ALL Rights Reserved </footer>
-  <script>
-
-    var navLinks = document.getElementById( "navLinks" );
-
-    function search() {
-                 url = 'Admin-Page.php?sort='+document.getElementById("srch").value;
-                 window.open(url);
-            }
-
-    function hideBurger()
-    {
-      navLinks.style.right = "-300px";
-      // document.getElementById( "gg-menu" ).style.display = "block";
-    }
-    function showBurger()
-    {
-      navLinks.style.right = "0";
-      // document.getElementById( "gg-menu" ).style.display = "none";
-
-    }
   </script>
-
 </body>
 
 </html>
